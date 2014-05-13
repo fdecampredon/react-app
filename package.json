@@ -1,0 +1,31 @@
+{
+  "name": "react-app",
+  "version": "0.0.1",
+  "description": "react application sample",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fdecampredon/react-app.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "François de Campredon <francois.de.campredon@gmail.com> (https://github.com/fdecampredon)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fdecampredon/react-app/issues"
+  },
+  "homepage": "https://github.com/fdecampredon/react-app",
+  "dependencies": {
+    "express": "~4.2.0",
+    "couchbase": "~1.2.4",
+    "passport": "~0.2.0",
+    "express-state": "~1.2.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5"
+  }
+}
