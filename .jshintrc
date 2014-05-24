@@ -1,0 +1,18 @@
+{
+    "node": true,
+    "bitwise": false,
+    "camelcase" : true,
+    "curly" : true,
+    "indent": 4,
+    "latedef" : true,
+    "newcap" : true,
+    "noarg" : true,
+    "undef" : true,
+    "unused" : true,
+    "strict" : true,
+    "trailing": true,
+    "regexp": true,
+    "smarttabs": true,
+    "eqeqeq" : true,
+    "quotmark" : "single"
+}
