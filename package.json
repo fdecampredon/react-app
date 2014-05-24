@@ -23,7 +23,8 @@
     "express": "~4.2.0",
     "couchbase": "~1.2.4",
     "passport": "~0.2.0",
-    "express-state": "~1.2.0"
+    "express-state": "~1.2.0",
+    "node-uuid": "~1.4.1"
   },
   "devDependencies": {
     "grunt": "~0.4.5"
