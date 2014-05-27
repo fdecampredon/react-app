@@ -14,5 +14,6 @@
     "regexp": true,
     "smarttabs": true,
     "eqeqeq" : true,
-    "quotmark" : "single"
+    "quotmark" : "single",
+    "browser": true
 }
