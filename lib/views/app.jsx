@@ -6,9 +6,11 @@ var React       = require('react');
 var Router      = require('react-router-component');
 var Locations   = Router.Locations;
 var Location    = Router.Location ;
+var NotFound    = Router.NotFound ;
 
-var Login = require('./login.jsx');
-var Main = require('./main.jsx')
+var Login           = require('./login.jsx');
+var Main            = require('./main.jsx');
+var NotFoundView    = require('./notFound.jsx');
 
 var App = React.createClass({
     render: function() {
@@ -24,6 +26,7 @@ var App = React.createClass({
                         <Locations path={this.props.path}>
                             <Location path="/" handler={Main} />
                             <Location path="/login" handler={Login} />
+                            <NotFound handler={NotFoundView} />
                         </Locations>
                     </section>
                 </body>
