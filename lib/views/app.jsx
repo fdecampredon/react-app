@@ -22,13 +22,12 @@ var App = React.createClass({
                     <link rel='stylesheet' href='/style.css' />
                 </head>
                 <body>
-                    <section id="react-content">
-                        <Locations path={this.props.path}>
-                            <Location path="/" handler={Main} />
-                            <Location path="/login" handler={Login} />
-                            <NotFound handler={NotFoundView} />
-                        </Locations>
-                    </section>
+                    <Locations path={this.props.path}>
+                        <Location path="/" handler={Main} />
+                        <Location path="/login" handler={Login} />
+                        <NotFound handler={NotFoundView} />
+                    </Locations>
+                    <script src='/bundle.js' />
                 </body>
             </html>
         );
