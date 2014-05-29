@@ -4,7 +4,7 @@
 
 var React = require('react');
 
-var Main = React.createClass({
+var MainView = React.createClass({
     render: function() {
         return (
             <h1>Hello </h1>
@@ -12,4 +12,4 @@ var Main = React.createClass({
     }
 });
 
-module.exports = Main;
+module.exports = MainView;

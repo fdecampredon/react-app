@@ -6,7 +6,7 @@ var React               = require('react');
 var LinkedStateMixin    = require('react/lib/LinkedStateMixin');
 var xhr                 = require('../utils/xhr');
 
-var Login = React.createClass({
+var LoginView = React.createClass({
     mixins: [LinkedStateMixin],
     getInitialState: function () {
         return {
@@ -27,11 +27,11 @@ var Login = React.createClass({
                 </header>
                 <form className="login-form pure-form pure-form-stacked" onSubmit={this.onSubmit} >
                     <fieldset>
-                        <label htmlFor="username">Username</label>
+                        <label htmlFor="username">Username:</label>
                         <input id="username" type="text" placeholder="Username"
                             valueLink={this.linkState('username')} />
 
-                        <label htmlFor="password">Password</label>
+                        <label htmlFor="password">Password:</label>
                         <input id="password" type="password" placeholder="Password" 
                             valueLink={this.linkState('password')} />
                               
@@ -46,4 +46,4 @@ var Login = React.createClass({
     }
 });
 
-module.exports = Login;
+module.exports = LoginView;
