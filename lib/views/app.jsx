@@ -8,9 +8,10 @@ var Locations   = Router.Locations;
 var Location    = Router.Location ;
 var NotFound    = Router.NotFound ;
 
-var Login           = require('./login.jsx');
-var Main            = require('./main.jsx');
-var NotFoundView    = require('./notFound.jsx');
+var MainView            = require('./mainView.jsx');
+var LoginView           = require('./loginView.jsx');
+var RegisterView        = require('./registerView.jsx');
+var NotFoundView        = require('./notFoundView.jsx');
 
 var App = React.createClass({
     render: function() {
@@ -34,8 +35,9 @@ var App = React.createClass({
                     </header>
                     
                     <Locations className='page-content' path={this.props.path}>
-                        <Location path="/" handler={Main} />
-                        <Location path="/login" handler={Login} />
+                        <Location path="/" handler={MainView} />
+                        <Location path="/login" handler={LoginView} />
+                        <Location path="/register" handler={RegisterView} />
                         <NotFound handler={NotFoundView} />
                     </Locations>
                     <script src='/bundle.js' />
