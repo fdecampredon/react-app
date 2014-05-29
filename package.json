@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "grunt test",
-    "build": "browserify -t reactify lib/client -o public/bundle.js"
+    "build": "browserify -t reactify lib/client -o public/bundle.js",
+    "watch-js": "watchify -t reactify lib/client -o public/bundle.js",
+    "start": "node lib/server.js"
   },
   "repository": {
     "type": "git",
@@ -45,6 +47,7 @@
   },
   "devDependencies": {
     "grunt": "~0.4.5",
-    "request": "~2.36.0"
+    "request": "~2.36.0",
+    "watchify": "~0.10.1"
   }
 }
