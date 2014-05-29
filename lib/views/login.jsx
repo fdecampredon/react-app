@@ -22,31 +22,23 @@ var Login = React.createClass({
     render: function() {
         return (
             <div className="login-page">
-                <header>
-                    <h1>
-                        <img src="/images/react-logo.png" />
-                        ReactX Task Manager
-                        <img src="/images/rxjs-logo.png" />
-                    </h1>
+                <header className="login-form-header">
+                    <h1>Sign In</h1>
                 </header>
-                <form className="pure-form pure-form-aligned" onSubmit={this.onSubmit} >
+                <form className="login-form pure-form pure-form-stacked" onSubmit={this.onSubmit} >
                     <fieldset>
-                        <div className="pure-control-group">
-                            <label htmlFor="username">Username</label>
-                            <input id="username" type="text" placeholder="Username"
-                                valueLink={this.linkState('username')} />
-                        </div>
-                        <div className="pure-control-group">
-                            <label htmlFor="password">Password</label>
-                            <input id="password" type="password" placeholder="Password" 
-                                valueLink={this.linkState('password')} />
-                        </div>
-                        <div className="pure-controls">
-                            <button type="submit" 
-                                className="pure-button pure-button-primary">
-                                Sign in
-                            </button>
-                        </div>
+                        <label htmlFor="username">Username</label>
+                        <input id="username" type="text" placeholder="Username"
+                            valueLink={this.linkState('username')} />
+
+                        <label htmlFor="password">Password</label>
+                        <input id="password" type="password" placeholder="Password" 
+                            valueLink={this.linkState('password')} />
+                              
+                        <button type="submit" 
+                            className="pure-button pure-button-primary">
+                            Sign in
+                        </button>
                     </fieldset>
                 </form>
             </div>

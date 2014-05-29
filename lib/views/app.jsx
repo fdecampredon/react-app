@@ -22,7 +22,18 @@ var App = React.createClass({
                     <link rel='stylesheet' href='/style.css' />
                 </head>
                 <body>
-                    <Locations path={this.props.path}>
+                    <header className="site-header">
+                        <div className="page-content pure-menu pure-menu-open pure-menu-horizontal pure-menu-pull-right">
+                            <a href="/" className="pure-menu-heading"><h1>React Task Manager</h1></a>
+                            <ul>
+                                <li><a href="/login">Login</a></li>
+                                <li><a href="/register">Register</a></li>
+                            </ul>
+                        </div>
+                        
+                    </header>
+                    
+                    <Locations className='page-content' path={this.props.path}>
                         <Location path="/" handler={Main} />
                         <Location path="/login" handler={Login} />
                         <NotFound handler={NotFoundView} />

@@ -63,7 +63,17 @@ var App = React.createClass({displayName: 'App',
                     React.DOM.link( {rel:"stylesheet", href:"/style.css"} )
                 ),
                 React.DOM.body(null, 
-                    Locations( {path:this.props.path}, 
+                    React.DOM.header( {className:"site-header"}, 
+                        React.DOM.div( {className:"page-content pure-menu pure-menu-open pure-menu-horizontal"}, 
+                            React.DOM.h1(null, React.DOM.a( {href:"/", className:"pure-menu-heading"}, "React Task Manager")),
+                            React.DOM.ul( {className:"site-header-controls"}, 
+                                React.DOM.li(null, React.DOM.a( {href:"/login"}, "Login")),
+                                React.DOM.li(null, React.DOM.a( {href:"/register"}, "Register"))
+                            )
+                        )
+                    ),
+                    
+                    Locations( {className:"page-content", path:this.props.path}, 
                         Location( {path:"/", handler:Main} ),
                         Location( {path:"/login", handler:Login} ),
                         NotFound( {handler:NotFoundView} )
@@ -101,30 +111,22 @@ var Login = React.createClass({displayName: 'Login',
     render: function() {
         return (
             React.DOM.div( {className:"login-page"}, 
-                React.DOM.header(null, 
-                    React.DOM.h1(null, 
-                        React.DOM.img( {src:"/images/react-logo.png"} ),
-                        "ReactX Task Manager",
-                        React.DOM.img( {src:"/images/rxjs-logo.png"} )
-                    )
+                React.DOM.header( {className:"login-form-header"}, 
+                    React.DOM.h1(null, "Sign In")
                 ),
-                React.DOM.form( {className:"pure-form pure-form-aligned", onSubmit:this.onSubmit} , 
+                React.DOM.form( {className:"login-form pure-form pure-form-stacked", onSubmit:this.onSubmit} , 
                     React.DOM.fieldset(null, 
-                        React.DOM.div( {className:"pure-control-group"}, 
-                            React.DOM.label( {htmlFor:"username"}, "Username"),
-                            React.DOM.input( {id:"username", type:"text", placeholder:"Username",
-                                valueLink:this.linkState('username')} )
-                        ),
-                        React.DOM.div( {className:"pure-control-group"}, 
-                            React.DOM.label( {htmlFor:"password"}, "Password"),
-                            React.DOM.input( {id:"password", type:"password", placeholder:"Password", 
-                                valueLink:this.linkState('password')} )
-                        ),
-                        React.DOM.div( {className:"pure-controls"}, 
-                            React.DOM.button( {type:"submit", 
-                                className:"pure-button pure-button-primary"}, 
-                                "Sign in"
-                            )
+                        React.DOM.label( {htmlFor:"username"}, "Username"),
+                        React.DOM.input( {id:"username", type:"text", placeholder:"Username",
+                            valueLink:this.linkState('username')} ),
+
+                        React.DOM.label( {htmlFor:"password"}, "Password"),
+                        React.DOM.input( {id:"password", type:"password", placeholder:"Password", 
+                            valueLink:this.linkState('password')} ),
+                              
+                        React.DOM.button( {type:"submit", 
+                            className:"pure-button pure-button-primary"}, 
+                            "Sign in"
                         )
                     )
                 )
