@@ -17,7 +17,6 @@ var LoginView = React.createClass({
     onSubmit: function(e) {
         e.preventDefault();
         xhr('/login', 'POST', this.state);
-        
     },
     render: function() {
         return (

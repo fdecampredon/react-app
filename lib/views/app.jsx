@@ -8,10 +8,8 @@ var Locations   = Router.Locations;
 var Location    = Router.Location ;
 var NotFound    = Router.NotFound ;
 
-var MainView            = require('./mainView.jsx');
-var LoginView           = require('./loginView.jsx');
-var RegisterView        = require('./registerView.jsx');
-var NotFoundView        = require('./notFoundView.jsx');
+
+var AppHeader   = require('./appHeader.jsx');
 
 var App = React.createClass({
     render: function() {
@@ -23,23 +21,10 @@ var App = React.createClass({
                     <link rel='stylesheet' href='/style.css' />
                 </head>
                 <body>
-                    <header className="site-header">
-                        <div className="page-content pure-menu pure-menu-open pure-menu-horizontal pure-menu-pull-right">
-                            <a href="/" className="pure-menu-heading"><h1>React Task Manager</h1></a>
-                            <ul>
-                                <li><a href="/login">Login</a></li>
-                                <li><a href="/register">Register</a></li>
-                            </ul>
-                        </div>
-                        
-                    </header>
-                    
-                    <Locations className='page-content' path={this.props.path}>
-                        <Location path="/" handler={MainView} />
-                        <Location path="/login" handler={LoginView} />
-                        <Location path="/register" handler={RegisterView} />
-                        <NotFound handler={NotFoundView} />
-                    </Locations>
+                    <AppHeader />
+                    <div className='page-content'>
+                        {this.props.children}
+                    </div>
                     <script src='/bundle.js' />
                 </body>
             </html>

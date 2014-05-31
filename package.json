@@ -7,6 +7,7 @@
     "test": "grunt test",
     "build": "browserify -t reactify lib/client -o public/bundle.js",
     "watch-js": "watchify -t reactify lib/client -o public/bundle.js",
+    "start-dev": "nodemon lib/server.js",
     "start": "node lib/server.js"
   },
   "repository": {
@@ -41,13 +42,13 @@
     "reactify": "~0.13.1",
     "bluebird": "~1.2.4",
     "url-pattern": "~0.6.0",
-    "react-router-component": "~0.18.3",
-    "mustache": "~0.8.1",
-    "morgan": "~1.1.1"
+    "rx": "~2.2.24",
+    "rrouter": "git://github.com/andreypopp/rrouter"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
     "request": "~2.36.0",
-    "watchify": "~0.10.1"
+    "watchify": "~0.10.1",
+    "nodemon": "~1.1.1"
   }
 }

@@ -16,7 +16,11 @@ var RegisterView = React.createClass({
     },
     onSubmit: function(e) {
         e.preventDefault();
-        xhr('/register', 'POST', this.state);
+        xhr('/register', 'POST', {
+            username: this.state.username,
+            email: this.state.email,
+            password: this.state.password
+        });
         
     },
     render: function() {
@@ -33,7 +37,7 @@ var RegisterView = React.createClass({
     
                         <label htmlFor="username">Email:</label>
                         <input id="username" type="text" placeholder="Username"
-                            valueLink={this.linkState('username')} />
+                            valueLink={this.linkState('email')} />
 
                         <label htmlFor="password">Password:</label>
                         <input id="password" type="password" placeholder="Password" 
@@ -41,7 +45,7 @@ var RegisterView = React.createClass({
                                  
                         <label htmlFor="password">Confirm Password:</label>
                         <input id="password" type="password" placeholder="Password" 
-                            valueLink={this.linkState('password')} />
+                            valueLink={this.linkState('passwordConfirm')} />
                               
                         <button type="submit" 
                             className="pure-button pure-button-primary">
