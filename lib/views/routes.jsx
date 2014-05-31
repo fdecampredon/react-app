@@ -6,14 +6,14 @@ var Route   = RRouter.Route;
 
 
 
-var MainView            = require('./mainView.jsx');
+var DashBoard            = require('./dashboard.jsx');
 var LoginView           = require('./loginView.jsx');
 var RegisterView        = require('./registerView.jsx');
 var NotFoundView        = require('./notFoundView.jsx');
 
 var routes = (
     <Routes>
-        <Route path="/" view={MainView} />
+        <Route path="/" view={DashBoard} />
         <Route path="/login" view={LoginView} />
         <Route path="/register" view={RegisterView} />
     </Routes>
