@@ -3,12 +3,6 @@
 'use strict';
 
 var React       = require('react');
-var Router      = require('react-router-component');
-var Locations   = Router.Locations;
-var Location    = Router.Location ;
-var NotFound    = Router.NotFound ;
-
-
 var AppHeader   = require('./appHeader.jsx');
 
 var App = React.createClass({
