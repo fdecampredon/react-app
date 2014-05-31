@@ -2,10 +2,15 @@
 
 'use strict';
 
-var React       = require('react');
-var AppHeader   = require('./appHeader.jsx');
-
-var App = React.createClass({
+var React           = require('react');
+var AppHeader       = require('./appHeader.jsx');
+var SessionStore    = require('../store/sessionStore');
+var MainView = React.createClass({
+    componentWillMount: function () {
+        if (this.context.isServer) {
+            
+        }
+    },
     render: function() {
         return (
             <html>
@@ -17,7 +22,7 @@ var App = React.createClass({
                 <body>
                     <AppHeader />
                     <div className='page-content'>
-                        {this.props.children}
+                        {this.props.content}
                     </div>
                     <script src='/bundle.js' />
                 </body>
@@ -26,4 +31,4 @@ var App = React.createClass({
     }
 });
 
-module.exports = App;
+module.exports = MainView;
