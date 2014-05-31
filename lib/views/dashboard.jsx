@@ -4,7 +4,7 @@
 
 var React = require('react');
 
-var MainView = React.createClass({
+var DashBoard = React.createClass({
     render: function() {
         return (
             <h1>Hello </h1>
@@ -12,4 +12,4 @@ var MainView = React.createClass({
     }
 });
 
-module.exports = MainView;
+module.exports = DashBoard;
