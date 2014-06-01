@@ -4,22 +4,17 @@
 
 var React           = require('react');
 var AppHeader       = require('./appHeader.jsx');
-var SessionStore    = require('../store/sessionStore');
+var AuthStore       = require('../store/authStore');
+
 var MainView = React.createClass({
-    contextTypes: {
-        isServer: React.PropTypes.bool,
-        currentRequest : React.PropTypes.object
+    componentWillMount: function () {
+        this.authStore = new AuthStore()
     },
     
     render: function() {
-        var currentUser;
-        if (this.context.isServer) {
-            currentUser = this.context.currentRequest.user;
-            console.log(currentUser);
-        }
         return (
             <div>
-                <AppHeader currentUser={currentUser} />
+                <AppHeader currentUser={ this.authStore.currentUser} />
                 <div className='page-content'>
                     {this.props.contentView}
                 </div>
