@@ -44,7 +44,8 @@
     "url-pattern": "~0.6.0",
     "rx": "~2.2.24",
     "rrouter": "git://github.com/andreypopp/rrouter",
-    "express-session": "~1.2.1"
+    "express-session": "~1.2.1",
+    "mustache": "~0.8.1"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
