@@ -13,10 +13,12 @@ var RegisterView        = require('./registerView.jsx');
 var NotFoundView        = require('./notFoundView.jsx');
 
 var routes = (
-    <Routes view={MainView}>
-        <Route path="/" content={DashBoard} />
-        <Route path="/login" content={LoginView} />
-        <Route path="/register" content={RegisterView} />
+    <Routes >
+        <Routes view={MainView}>
+            <Route path="/" contentView={DashBoard} />
+            <Route path="/login" contentView={LoginView} />
+            <Route path="/register" contentView={RegisterView} />
+        </Routes>
     </Routes>
 );
     

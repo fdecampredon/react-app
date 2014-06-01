@@ -43,7 +43,8 @@
     "bluebird": "~1.2.4",
     "url-pattern": "~0.6.0",
     "rx": "~2.2.24",
-    "rrouter": "git://github.com/andreypopp/rrouter"
+    "rrouter": "git://github.com/andreypopp/rrouter",
+    "express-session": "~1.2.1"
   },
   "devDependencies": {
     "grunt": "~0.4.5",

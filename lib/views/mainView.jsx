@@ -6,12 +6,19 @@ var React           = require('react');
 var AppHeader       = require('./appHeader.jsx');
 var SessionStore    = require('../store/sessionStore');
 var MainView = React.createClass({
-    componentWillMount: function () {
-        if (this.context.isServer) {
-            
-        }
+    contextTypes: {
+      isServer: React.PropTypes.bool,
+      currentRequest : React.PropTypes.object
     },
+    
     render: function() {
+        var currentUser;
+        if (this.context.isServer) {
+            var currentUser = this.context.currentRequest.user;
+            console.log(currentUser);
+        } else {
+            var currentUser = null;
+        }
         return (
             <html>
                 <head>
@@ -20,9 +27,9 @@ var MainView = React.createClass({
                     <link rel='stylesheet' href='/style.css' />
                 </head>
                 <body>
-                    <AppHeader />
+                    <AppHeader currentUser={currentUser} />
                     <div className='page-content'>
-                        {this.props.content}
+                        {this.props.contentView}
                     </div>
                     <script src='/bundle.js' />
                 </body>
