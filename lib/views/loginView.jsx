@@ -5,18 +5,27 @@
 var React               = require('react');
 var LinkedStateMixin    = require('react/lib/LinkedStateMixin');
 var xhr                 = require('../utils/xhr');
+var AuthActions         = require('../actions/authActions');
+var RoutingContextMixin = require('rrouter').RoutingContextMixin;
 
 var LoginView = React.createClass({
-    mixins: [LinkedStateMixin],
+    mixins: [LinkedStateMixin, RoutingContextMixin ],
     getInitialState: function () {
         return {
             username: null,
             password: null
         };
     },
+    
+    componentWillMount: function ()  {
+        AuthActions.login.subscribe(function () {
+            this.navigate('/');
+        }.bind(this));
+    },
+    
     onSubmit: function(e) {
         e.preventDefault();
-        xhr('/login', 'POST', this.state);
+        AuthActions.login(this.state);
     },
     render: function() {
         return (

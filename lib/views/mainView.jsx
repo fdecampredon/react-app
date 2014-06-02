@@ -7,14 +7,11 @@ var AppHeader       = require('./appHeader.jsx');
 var AuthStore       = require('../store/authStore');
 
 var MainView = React.createClass({
-    componentWillMount: function () {
-        this.authStore = new AuthStore()
-    },
     
     render: function() {
         return (
             <div>
-                <AppHeader currentUser={ this.authStore.currentUser} />
+                <AppHeader currentUser={ AuthStore.getCurrentUser()} />
                 <div className='page-content'>
                     {this.props.contentView}
                 </div>
