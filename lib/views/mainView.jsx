@@ -2,20 +2,20 @@
 
 'use strict';
 
-var React           = require('react');
-var AppHeader       = require('./appHeader.jsx');
-var AuthStore       = require('../store/authStore');
+var React = require('react');
 
 var MainView = React.createClass({
     
     render: function() {
         return (
+            /*jshint ignore:start*/
             <div>
                 <AppHeader currentUser={ AuthStore.getCurrentUser()} />
                 <div className='page-content'>
-                    {this.props.contentView}
+                    {this.props.activeRoute}
                 </div>
             </div>
+            /*jshint ignore:end*/
         );
     }
 });

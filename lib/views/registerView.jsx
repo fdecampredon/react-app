@@ -4,7 +4,6 @@
 
 var React               = require('react');
 var LinkedStateMixin    = require('react/lib/LinkedStateMixin');
-var xhr                 = require('../utils/xhr');
 var AuthActions         = require('../actions/authActions');
 var RoutingContextMixin = require('rrouter').RoutingContextMixin;
 
@@ -13,7 +12,6 @@ var RegisterView = React.createClass({
     getInitialState: function () {
         return { };
     },
-    
       
     componentWillMount: function ()  {
         AuthActions.register.subscribe(function () {
@@ -32,6 +30,7 @@ var RegisterView = React.createClass({
     
     render: function() {
         return (
+            /*jshint ignore:start*/
             <div className="login-page">
                 <header className="login-form-header">
                     <h1>Sign Up</h1>
@@ -61,6 +60,7 @@ var RegisterView = React.createClass({
                     </fieldset>
                 </form>
             </div>
+            /*jshint ignore:end*/                
         );
     }
 });

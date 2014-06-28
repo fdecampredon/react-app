@@ -1,8 +1,8 @@
 /** @jsx React.DOM */
+/*jshint unused:false*/
 
-var RRouter = require('rrouter');
-var Routes  = RRouter.Routes;
-var Route   = RRouter.Route;
+var Router = require('./react-nested-router');
+var Route = Router.Route;
 
 
 
@@ -13,13 +13,13 @@ var RegisterView        = require('./registerView.jsx');
 var NotFoundView        = require('./notFoundView.jsx');
 
 var routes = (
-    <Routes >
-        <Routes view={MainView}>
-            <Route path="/" contentView={DashBoard} />
-            <Route path="/login" contentView={LoginView} />
-            <Route path="/register" contentView={RegisterView} />
-        </Routes>
-    </Routes>
+    /*jshint ignore:start*/
+    <Route handler={MainView}>
+        <Route path="/" handler={DashBoard} />
+        <Route path="/login" handler={LoginView} />
+        <Route path="/register" handler={RegisterView} />
+    </Route>
+    /*jshint ignore:end*/
 );
     
     

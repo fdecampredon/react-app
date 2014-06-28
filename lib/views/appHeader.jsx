@@ -3,8 +3,8 @@
 'use strict';
 
 var React       = require('react');
-var RRouter     = require('rrouter');
-var Link        = RRouter.Link;
+var Router      = require('react-nested-router');
+var Link        = Router.Link;
 
 var AppHeader = React.createClass({
     render: function () {
