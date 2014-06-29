@@ -4,12 +4,11 @@
 
 var React               = require('react');
 var LinkedStateMixin    = require('react/lib/LinkedStateMixin');
-var xhr                 = require('../utils/xhr');
 var AuthActions         = require('../actions/authActions');
-var RoutingContextMixin = require('rrouter').RoutingContextMixin;
+var Router              = require('react-nested-router');
 
 var LoginView = React.createClass({
-    mixins: [LinkedStateMixin, RoutingContextMixin ],
+    mixins: [LinkedStateMixin ],
     getInitialState: function () {
         return {
             username: null,
@@ -19,8 +18,8 @@ var LoginView = React.createClass({
     
     componentWillMount: function ()  {
         AuthActions.login.subscribe(function () {
-            this.navigate('/');
-        }.bind(this));
+            Router.transitionTo('/');
+        });
     },
     
     onSubmit: function(e) {

@@ -2,5 +2,6 @@
     "node":true,
     "browser": true,
     "unused": true,
-    "undef": true
+    "undef": true,
+    "newcap": false
 }

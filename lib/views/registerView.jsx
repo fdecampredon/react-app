@@ -5,18 +5,18 @@
 var React               = require('react');
 var LinkedStateMixin    = require('react/lib/LinkedStateMixin');
 var AuthActions         = require('../actions/authActions');
-var RoutingContextMixin = require('rrouter').RoutingContextMixin;
+var Router              = require('react-nested-router').RoutingContextMixin;
 
 var RegisterView = React.createClass({
-    mixins: [LinkedStateMixin, RoutingContextMixin],
+    mixins: [LinkedStateMixin],
     getInitialState: function () {
         return { };
     },
       
     componentWillMount: function ()  {
         AuthActions.register.subscribe(function () {
-            this.navigate('/');
-        }.bind(this));
+            Router.transitionTo('/');
+        });
     },
     
     onSubmit: function(e) {
