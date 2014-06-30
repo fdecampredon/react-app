@@ -1,0 +1,11 @@
+{
+    "interface":"4984",
+    "adminInterface":"4985",
+    "log":["REST"],
+    "databases":{
+        "todos":{
+            "server":"http://localhost:8091",
+            "bucket":"default"
+        }
+   }
+}

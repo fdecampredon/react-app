@@ -30,7 +30,6 @@ var RegisterView = React.createClass({
     
     render: function() {
         return (
-            /*jshint ignore:start*/
             <div className="login-page">
                 <header className="login-form-header">
                     <h1>Sign Up</h1>
@@ -60,7 +59,6 @@ var RegisterView = React.createClass({
                     </fieldset>
                 </form>
             </div>
-            /*jshint ignore:end*/                
         );
     }
 });
