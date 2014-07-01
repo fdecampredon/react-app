@@ -1,11 +1,12 @@
 {
-    "interface":"4984",
-    "adminInterface":"4985",
-    "log":["REST"],
+    "interface": ":4984",
+    "adminInterface": "127.0.0.1:4985",
+    "log": ["REST"],
     "databases":{
         "todos":{
-            "server":"http://localhost:8091",
-            "bucket":"default"
+            "server": "walrus:",
+            "bucket": "todos",
+            "sync": "function(doc) {channel(doc.channels);}"
         }
    }
 }

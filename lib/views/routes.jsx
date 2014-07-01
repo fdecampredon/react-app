@@ -2,8 +2,7 @@
 /*jshint unused:false*/
 
 var React               = require('react');
-var Router              = require('./react-nested-router');
-var Route               = Router.Route;
+var Route               = require('react-nested-router').Route;
 var MainView            = require('./mainView.jsx');
 var DashBoard           = require('./dashboard.jsx');
 var LoginView           = require('./loginView.jsx');
